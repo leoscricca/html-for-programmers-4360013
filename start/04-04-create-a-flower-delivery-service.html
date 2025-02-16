@@ -1,15 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create A Flower Delivery Service</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create A Flower Delivery Service</title>
-</head>
-
-<body>
-  
-</body>
-
+  <body>
+    <table>
+      <form action="" method="post">
+        <tr>
+          <td>
+            <h2>Recipient Details</h2>
+          </td>
+          <td>
+            <h2>Sender Details</h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="recipient-full-name">Full name</label>
+            <br />
+            <input type="text" id="recipient-full-name" placeholder="..." />
+            <br />
+          </td>
+          <td>
+            <label for="sender-full-name">Full name</label>
+            <br />
+            <input type="text" id="sender-full-name" placeholder="..." />
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="telephone">Telephone</label>
+            <br />
+            <input type="tel" id="telephone" placeholder="0800-555-222" />
+            <br />
+          </td>
+          <td>
+            <label for="email">Email address</label>
+            <br />
+            <input type="email" id="email" placeholder="..." />
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="address">Address</label>
+            <br />
+            <input type="text" id="address" placeholder="..." />
+            <br />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><br /></td>
+          <td><br /></td>
+        </tr>
+        <tr>
+          <td><h2>Order</h2></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label for="bouquet-tyoe">Bouquet Type</label>
+            <br />
+            <select name="bouquet-tyoe" id="bouquet-tyoe">
+              <option value="1">Basic Bouquet - $24.99</option>
+              <option value="2">Premium Bouquet - $49.99</option>
+              <option value="3">Premium Bouquet + Chocolate - $69.99</option>
+            </select>
+          </td>
+          <td>
+            <label for="message">Message</label>
+            <br />
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button type="submit">Checkout</button></td>
+        </tr>
+      </form>
+    </table>
+  </body>
 </html>
