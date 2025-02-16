@@ -1,52 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamically Generate HTML Elements With JavaScript</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamically Generate HTML Elements With JavaScript</title>
-</head>
-
-<body>
-  <!-- Generate this for each node
+  <body>
+    <!-- Generate this for each node
   <div>
     <img src="" alt="">
     <h3></h3>
     <p><a href=""></a></p>
     <button></button>
   </div> -->
-  <div class="wrapper"></div>
+    <div class="wrapper"></div>
 
-  <script>
-    const socials = [
-      {
-        name: 'Mai Sarabia',
-        city: 'Berlin',
-        country: 'Germany',
-        avatar: '../assets/avatar-1.png'
-      },
-      {
-        name: 'Elsa Johansson',
-        city: 'Oslo',
-        country: 'Norway',
-        avatar: '../assets/avatar-2.png'
-      },
-      {
-        name: 'Shonda Green',
-        city: 'San Francisco',
-        country: 'USA',
-        avatar: '../assets/avatar-3.png'
-      },
-      {
-        name: 'Daniel Nagy',
-        city: 'Budapest',
-        country: 'Hungary',
-        avatar: '../assets/avatar-4.png'
-      }
-    ];
+    <script>
+      const socials = [
+        {
+          name: "Mai Sarabia",
+          city: "Berlin",
+          country: "Germany",
+          avatar: "../assets/avatar-1.png",
+        },
+        {
+          name: "Elsa Johansson",
+          city: "Oslo",
+          country: "Norway",
+          avatar: "../assets/avatar-2.png",
+        },
+        {
+          name: "Shonda Green",
+          city: "San Francisco",
+          country: "USA",
+          avatar: "../assets/avatar-3.png",
+        },
+        {
+          name: "Daniel Nagy",
+          city: "Budapest",
+          country: "Hungary",
+          avatar: "../assets/avatar-4.png",
+        },
+      ];
 
-  </script>
-</body>
+      const wrapper = document.getElementsByClassName("wrapper")[0];
 
+      socials.forEach((user) => {
+        let socialWrapper = document.createElement("div");
+        socialWrapper.style = "border: 1px solid black";
+
+        let avatar = document.createElement("img");
+        avatar.src = user.avatar;
+        avatar.alt = user.name;
+
+        let name = document.createElement("h3");
+        name.innerText = user.name;
+
+        let location = document.createElement("p");
+        location.innerText = `, ${user.country}`;
+
+        let cityLink = document.createElement("a");
+        cityLink.href = "https://maps.app.goo.gl/B8SXUSbZnWxc7miL8";
+        cityLink.appendChild(document.createTextNode(user.city));
+
+        location.prepend(cityLink);
+
+        let addButton = document.createElement("button");
+        addButton.innerText = "Add Friend";
+
+        socialWrapper.appendChild(avatar);
+        socialWrapper.appendChild(name);
+        socialWrapper.appendChild(location);
+        socialWrapper.appendChild(addButton);
+        wrapper.appendChild(socialWrapper);
+      });
+    </script>
+  </body>
 </html>
